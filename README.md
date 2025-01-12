@@ -6,7 +6,7 @@ A KitClient that runs in GitHub Codespaces.
 
 1. Log into GitHub
 2. Click the button below to start a new KitClient or restart an existing KitClient.
-   <br><a href='https://codespaces.new/HFOSSedu/KitClient-Codespaces?quickstart=1'><img src='https://github.com/codespaces/badge.svg' alt='Open in GitHub Codespaces' style='max-width: 100%;'></a>
+   <br><a href='https://codespaces.new/HFOSSedu/KitClient-Codespace?quickstart=1'><img src='https://github.com/codespaces/badge.svg' alt='Open in GitHub Codespaces' style='max-width: 100%;'></a>
    <br>Then:
    1. Create a new or open an existing KitClient.
       - If this is the first KitClient you have created from HFOSSedu/KitClient-Codespace, click the green "Create new Codespace" button.
@@ -55,12 +55,12 @@ These snippets will:
 
 ### Plain URL
 
-- `https://codespaces.new/HFOSSedu/KitClient-Codespaces?quickstart=1`
+- `https://codespaces.new/HFOSSedu/KitClient-Codespace?quickstart=1`
 
 ### HTML w/ "Open in GitHUB Codespaces" Button
 
-- `<a href='https://codespaces.new/HFOSSedu/KitClient-Codespaces?quickstart=1'><img src='https://github.com/codespaces/badge.svg' alt='Open in GitHub Codespaces' style='max-width: 100%;'></a>
+- `<a href='https://codespaces.new/HFOSSedu/KitClient-Codespace?quickstart=1'><img src='https://github.com/codespaces/badge.svg' alt='Open in GitHub Codespaces' style='max-width: 100%;'></a>
 `
 ### Markdown w/ "Open in GitHub Codespaces" Button
 
-- `[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HFOSSedu/KitClient-Codespaces?quickstart=1)`
+- `[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/HFOSSedu/KitClient-Codespace?quickstart=1)`
