@@ -14,7 +14,7 @@ A KitClient that runs in GitHub Codespaces.
       - If you have multiple KitClients created from HFOSSedu/KitClient-Codespace, and want to pick one of them, visit your [Codespaces page](https://github.com/codespaces).
    2. A new browser window or tab will open where the KitClient will load.
    3. Wait for the KitClient to become ready for use.
-      - The message "KitClient Ready for use." will be displayed when the KitClient is ready.
+      - The message "KitClient Ready for use." will be displayed in the terminal when the KitClient is ready.
       - Creating a new KitClient can take several minutes. 
         - You will see the screen contents change several times.
         - Eventually a prompt asking you to "Paste you GitHub Personal Access Token (PAT) here:" will appear.
