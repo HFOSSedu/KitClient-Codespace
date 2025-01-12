@@ -1,0 +1,70 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/base:debian",
+  "remoteUser": "vscode",
+  "workspaceFolder": "/home/vscode",
+  "features": {
+   "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+   "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.startupEditor": "none",
+        "github.codespaces.devcontainerChangedNotificationStyle": "none",
+        "terminal.integrated.hideOnStartup": "always",
+        "tasks": {
+          "version": "2.0.0",
+          "tasks": [
+            {
+              "label": "Open KitClient",
+              "dependsOrder": "sequence",
+              "dependsOn": [
+                "Setup User",
+                "Request PAT",
+                "Kitty"
+              ],
+              "runOptions": {
+                "runOn": "folderOpen"
+              }
+            },
+            {
+              "label": "Setup User",
+              "type": "shell",
+              "command": "/workspaces/$RepositoryName/.devcontainer/setupUser.bash",
+              "presentation": {
+                "reveal": "never",
+                "close": true
+              }
+            },
+            {
+              "label": "Request PAT",
+              "type": "shell",
+              "command": "/workspaces/$RepositoryName/.devcontainer/requestPAT.bash",
+              "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": false,
+                "showReuseMessage": false,
+                "focus": true,
+                "close": true
+              }
+            },
+            {
+              "label": "Kitty",
+              "type": "shell",
+              "command": "/workspaces/$RepositoryName/.devcontainer/installKitFeatures.bash",
+              "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": false,
+                "showReuseMessage": false,
+                "focus": true,
+                "close": false
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
