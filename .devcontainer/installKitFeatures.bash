@@ -6,4 +6,5 @@ if [ -d .kit ] && [ "$(pwd)" != "/home/$USER" ]; then
 fi
 
 # Run a new shell to pickup the changes.
+echo "KitClient is ready for use."
 exec /bin/bash
