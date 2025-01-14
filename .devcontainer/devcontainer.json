@@ -6,6 +6,8 @@
    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
+  // Suppress the Codesapces welcome message: https://github.com/orgs/community/discussions/43534
+  "postCreateCommand": "mkdir -p $HOME/.config/vscode-dev-containers/ && touch $HOME/.config/vscode-dev-containers/first-run-notice-already-displayed",
   "customizations": {
     "vscode": {
       "settings": {
@@ -21,7 +23,8 @@
               "dependsOn": [
                 "Setup User",
                 "Request PAT",
-                "Kitty"
+                "Install Kit",
+                "KiTTY"
               ],
               "runOptions": {
                 "runOn": "folderOpen"
@@ -32,8 +35,12 @@
               "type": "shell",
               "command": "/workspaces/$RepositoryName/.devcontainer/setupUser.bash",
               "presentation": {
-                "reveal": "never",
-                "close": true
+                "reveal": "always",
+                "panel": "shared",
+                "echo": false,
+                "showReuseMessage": false,
+                "focus": true,
+                "close": false
               }
             },
             {
@@ -42,20 +49,33 @@
               "command": "/workspaces/$RepositoryName/.devcontainer/requestPAT.bash",
               "presentation": {
                 "reveal": "always",
-                "panel": "new",
+                "panel": "shared",
                 "echo": false,
                 "showReuseMessage": false,
                 "focus": true,
-                "close": true
+                "close": false
               }
             },
             {
-              "label": "Kitty",
+              "label": "Install Kit",
               "type": "shell",
               "command": "/workspaces/$RepositoryName/.devcontainer/installKitFeatures.bash",
               "presentation": {
                 "reveal": "always",
-                "panel": "new",
+                "panel": "shared",
+                "echo": false,
+                "showReuseMessage": false,
+                "focus": true,
+                "close": false
+              }
+            },
+            {
+              "label": "KiTTY",
+              "type": "shell",
+              "command": "/workspaces/$RepositoryName/.devcontainer/readyMessage.bash",
+              "presentation": {
+                "reveal": "always",
+                "panel": "shared",
                 "echo": false,
                 "showReuseMessage": false,
                 "focus": true,

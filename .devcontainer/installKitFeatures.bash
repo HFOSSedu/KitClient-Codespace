@@ -4,7 +4,3 @@
 if [ -d .kit ] && [ "$(pwd)" != "/home/$USER" ]; then
   .kit/install-features-into-client/run.sh
 fi
-
-# Run a new shell to pickup the changes.
-echo "Kit development environment is ready for use."
-exec /bin/bash
