@@ -24,7 +24,7 @@
                 "Setup User",
                 "Request PAT",
                 "Install Kit",
-                "KiTTY"
+                "Kit-tty"
               ],
               "runOptions": {
                 "runOn": "folderOpen"
@@ -70,7 +70,7 @@
               }
             },
             {
-              "label": "KiTTY",
+              "label": "Kit-tty",
               "type": "shell",
               "command": "/workspaces/$RepositoryName/.devcontainer/readyMessage.bash",
               "presentation": {
