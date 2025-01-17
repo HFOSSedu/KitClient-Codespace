@@ -17,7 +17,10 @@ if [ ! -d /workspaces/$USER ]; then
    && git config --global safe.directory '*' \
    && echo "" >> "/home/$USER/.bashrc" \
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
+fi
 
-  # Reopen VSCode without any folders open so they don't see their home directory contents.
+# If the user's home directory is the open folder, then
+# reopen VSCode without any folder open.
+if [ "${CODESPACE_VSCODE_FOLDER}" == "/home/vscode" ]; then
   code -r
 fi
