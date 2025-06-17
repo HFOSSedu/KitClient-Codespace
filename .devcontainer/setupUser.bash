@@ -19,20 +19,11 @@ if [ ! -d /workspaces/$USER ]; then
    && echo "" >> "/home/$USER/.bashrc" \
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
 
+  # Always reopen VSCode without any folder open the first time the 
+  # codespace is opened.  This avoids a non-determinisitc issue where
+  # the ${CODESPACE_VSCODE_FOLDER} doesn't get sometimes.
   code -r
 fi
-
-echo "PWD: $PWD"
-echo "CODESPACE_VS_CODE_FOLDER: ${CODESPACE_VSCODE_FOLDER}"
-echo "CODESPACE_VS_CODE_FOLDER no {}: $CODESPACE_VSCODE_FOLDER"
-echo "CODESPACES: $CODESPACES"
-echo "RepositoryName: $RepositoryName"
-echo "HOME: $HOME" 
-echo "USER: $USER"
-echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
-echo "VSCODE_IPC_HOOK_CLI: $VSCODE_IPC_HOOK_CLI"
-
-sleep 5
 
 # If the user's home directory is the open folder, then
 # reopen VSCode without any folder open.
