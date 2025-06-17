@@ -19,7 +19,10 @@ then
 
   PAT=$($VSCODE_GIT_ASKPASS_NODE /workspaces/KitClient-Codespace/.devcontainer/readPAT.js)
   echo ""
-  mkdir ~/.kit
+  if [ ! -d ~/.kit ];
+  then 
+    mkdir ~/.kit
+  fi
   echo $PAT > ~/.kit/token
 fi
 
