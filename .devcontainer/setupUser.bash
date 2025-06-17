@@ -15,6 +15,7 @@ if [ ! -d /workspaces/$USER ]; then
    && git config --global pull.ff only \
    && git config --global init.defaultBranch main \
    && git config --global safe.directory '*' \
+   && git config --global pager.config false \
    && echo "" >> "/home/$USER/.bashrc" \
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
 fi
