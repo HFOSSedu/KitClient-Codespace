@@ -18,6 +18,8 @@ if [ ! -d /workspaces/$USER ]; then
    && git config --global pager.config false \
    && echo "" >> "/home/$USER/.bashrc" \
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
+
+  code -r
 fi
 
 echo "PWD: $PWD"
