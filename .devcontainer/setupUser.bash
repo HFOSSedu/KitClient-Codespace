@@ -18,6 +18,11 @@ if [ ! -d /workspaces/$USER ]; then
    && git config --global pager.config false \
    && echo "" >> "/home/$USER/.bashrc" \
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
+
+  # Always reopen VSCode without any folder open the first time the 
+  # codespace is opened.  This avoids a non-determinisitc issue where
+  # the ${CODESPACE_VSCODE_FOLDER} doesn't get sometimes.
+  code -r
 fi
 
 # If the user's home directory is the open folder, then
