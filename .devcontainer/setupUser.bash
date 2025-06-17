@@ -20,6 +20,8 @@ if [ ! -d /workspaces/$USER ]; then
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
 fi
 
+sleep 3
+
 # If the user's home directory (or the link to it) is the open folder, then
 # reopen VSCode without any folder open.
 if [ "${CODESPACE_VSCODE_FOLDER}" == "/home/vscode" ] || [ "${CODESPACE_VSCODE_FOLDER}" == "/workspaces/vscode" ]; then
