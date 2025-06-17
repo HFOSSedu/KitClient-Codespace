@@ -5,13 +5,24 @@
 # It will not work to push a manually cloned repo.
 export GITHUB_TOKEN=
 
+NEW_TOKEN=0
+
 # If we don't already have a token stashed, then prompt for one
 # and stash it.
 if [ ! -f ~/.kit/token ];
 then
-  read -s -p "Paste your GitHub Personal Access Token (PAT) here: " PAT
+  NEW_TOKEN=1
+  echo "The Kit development environment requires"
+  echo "a GitHub Personal Access Token (PAT) with"
+  echo "repo permission."
   echo ""
-  mkdir ~/.kit
+
+  PAT=$($VSCODE_GIT_ASKPASS_NODE /workspaces/KitClient-Codespace/.devcontainer/readPAT.js)
+  echo ""
+  if [ ! -d ~/.kit ];
+  then 
+    mkdir ~/.kit
+  fi
   echo $PAT > ~/.kit/token
 fi
 
@@ -23,6 +34,7 @@ export GITHUB_TOKEN=$PAT
 while ! gh auth status &> /dev/null;
 do
   export GITHUB_TOKEN=
+  NEW_TOKEN=1
 
   echo "Your Personal Access Token (PAT) is not valid."
   echo "Possible reasons include:"
@@ -30,7 +42,7 @@ do
   echo "  The PAT you entered previously may have expired."
   echo ""
 
-  read -s -p "Paste your GitHub Personal Access Token (PAT) here: " PAT
+  PAT=$($VSCODE_GIT_ASKPASS_NODE /workspaces/KitClient-Codespace/.devcontainer/readPAT.js)
   echo ""
 
   echo "$PAT" > ~/.kit/token
@@ -43,4 +55,8 @@ then
   echo "export GITHUB_TOKEN=$GITHUB_TOKEN" >> ~/.bashrc
 else 
   sed -i "s/GITHUB_TOKEN=.*/GITHUB_TOKEN=$PAT/" ~/.bashrc
+fi
+
+if [ "$NEW_TOKEN" == "1" ]; then
+  echo "GitHub PAT has been set successfully."
 fi
