@@ -9,7 +9,7 @@ export GITHUB_TOKEN=
 # and stash it.
 if [ ! -f ~/.kit/token ];
 then
-  read -s -p "Paste your GitHub Personal Access Token (PAT) here: " PAT
+  PAT=$($VSCODE_GIT_ASKPASS_NODE readPAT.js)
   echo ""
   mkdir ~/.kit
   echo $PAT > ~/.kit/token
@@ -30,7 +30,7 @@ do
   echo "  The PAT you entered previously may have expired."
   echo ""
 
-  read -s -p "Paste your GitHub Personal Access Token (PAT) here: " PAT
+  PAT=$($VSCODE_GIT_ASKPASS_NODE readPAT.js)
   echo ""
 
   echo "$PAT" > ~/.kit/token

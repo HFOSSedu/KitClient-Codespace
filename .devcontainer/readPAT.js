@@ -5,7 +5,7 @@ const rl = readline.createInterface({
   output: process.stderr
 });
 
-rl.query = "Paste PAT here: ";
+rl.query = "Paste your GitHub Personal Access Token (PAT) here: ";
 rl.stdoutMuted = true;
 
 rl._writeToOutput = function _writeToOutput(stringToWrite) {
