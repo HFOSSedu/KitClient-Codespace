@@ -20,7 +20,12 @@ if [ ! -d /workspaces/$USER ]; then
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
 fi
 
-sleep 3
+echo ""
+echo "PWD: $PWD"
+echo "CODESPACE_VS_CODE_FOLDER: ${CODESPACE_VSCODE_FOLDER}"
+echo ""
+
+sleep 5
 
 # If the user's home directory (or the link to it) is the open folder, then
 # reopen VSCode without any folder open.
