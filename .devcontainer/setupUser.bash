@@ -22,6 +22,7 @@ fi
 
 echo "PWD: $PWD"
 echo "CODESPACE_VS_CODE_FOLDER: ${CODESPACE_VSCODE_FOLDER}"
+echo "CODESPACE_VS_CODE_FOLDER no {}: $CODESPACE_VSCODE_FOLDER"
 echo "CODESPACES: $CODESPACES"
 echo "RepositoryName: $RepositoryName"
 echo "HOME: $HOME" 
@@ -31,8 +32,8 @@ echo "VSCODE_IPC_HOOK_CLI: $VSCODE_IPC_HOOK_CLI"
 
 sleep 5
 
-# If the user's home directory (or the link to it) is the open folder, then
+# If the user's home directory is the open folder, then
 # reopen VSCode without any folder open.
-if [ "${CODESPACE_VSCODE_FOLDER}" == "/home/vscode" ] || [ "${CODESPACE_VSCODE_FOLDER}" == "/workspaces/vscode" ]; then
+if [ "${CODESPACE_VSCODE_FOLDER}" == "/home/vscode" ]; then
   code -r
 fi
