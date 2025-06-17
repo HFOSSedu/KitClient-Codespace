@@ -20,13 +20,16 @@ if [ ! -d /workspaces/$USER ]; then
    && echo "source /usr/share/bash-completion/completions/git" >> "/home/$USER/.bashrc" 
 fi
 
-# There is a race condition where sometimes the ${CODESPACE_VSCODE_FOLDER} 
-# variable doesn't get set before we get here...
-while [ "${CODESPACE_VSCODE_FOLDER}" == "" ];
-do
-  sleep 1
-  echo "CODESPACE_VS_CODE_FOLDER: ${CODESPACE_VSCODE_FOLDER}"
-done
+echo "PWD: $PWD"
+echo "CODESPACE_VS_CODE_FOLDER: ${CODESPACE_VSCODE_FOLDER}"
+echo "CODESPACES: $CODESPACES"
+echo "RepositoryName: $RepositoryName"
+echo "HOME: $HOME"
+echo "USER: $USER"
+echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+echo "VSCODE_IPC_HOOK_CLI: $VSCODE_IPC_HOOK_CLI"
+
+sleep 5
 
 # If the user's home directory (or the link to it) is the open folder, then
 # reopen VSCode without any folder open.
