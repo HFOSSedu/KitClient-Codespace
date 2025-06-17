@@ -9,7 +9,7 @@ export GITHUB_TOKEN=
 # and stash it.
 if [ ! -f ~/.kit/token ];
 then
-  PAT=$($VSCODE_GIT_ASKPASS_NODE readPAT.js)
+  PAT=$($VSCODE_GIT_ASKPASS_NODE /workspaces/KitClient-Codespace/.devcontainer/readPAT.js)
   echo ""
   mkdir ~/.kit
   echo $PAT > ~/.kit/token
@@ -30,7 +30,7 @@ do
   echo "  The PAT you entered previously may have expired."
   echo ""
 
-  PAT=$($VSCODE_GIT_ASKPASS_NODE readPAT.js)
+  PAT=$($VSCODE_GIT_ASKPASS_NODE /workspaces/KitClient-Codespace/.devcontainer/readPAT.js)
   echo ""
 
   echo "$PAT" > ~/.kit/token
